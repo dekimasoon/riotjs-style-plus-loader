@@ -1,0 +1,29 @@
+{
+  "name": "riotjs-style-plus-loader",
+  "version": "0.1.0",
+  "description": "riotjs-loader extention which enables @import &amp; url() in your style tags.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dekimasoon/riotjs-style-plus-loader.git"
+  },
+  "author": "dekimasoon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dekimasoon/riotjs-style-plus-loader/issues"
+  },
+  "homepage": "https://github.com/dekimasoon/riotjs-style-plus-loader#readme",
+  "devDependencies": {
+    "eslint": "^1.9.0",
+    "eslint-config-standard": "^4.4.0",
+    "eslint-plugin-standard": "^1.3.1"
+  },
+  "peerDependencies": {
+    "css-loader": "^0.22.0",
+    "riotjs-loader": "^1.2.0",
+    "style-loader": "^0.13.0"
+  }
+}
