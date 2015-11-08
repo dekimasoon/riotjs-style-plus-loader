@@ -12,6 +12,12 @@
   },
   "author": "dekimasoon",
   "license": "MIT",
+  "keywords": [
+    "riotjs",
+    "riot",
+    "webpack",
+    "loader"
+  ],
   "bugs": {
     "url": "https://github.com/dekimasoon/riotjs-style-plus-loader/issues"
   },
