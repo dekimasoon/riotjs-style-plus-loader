@@ -1,5 +1,5 @@
 # riotjs-style-plus-loader
-riotjs-loader extension which enables @import &amp; url() in your style tags.
+riotjs-loader extension which enables @import & url() in your style tags.
 
 ## Install
 ```sh
@@ -21,19 +21,22 @@ module: {
 }
 ```
 
- Now you can use @import &amp; url() in your style tags! Pure CSS, Stylus, Sass, Less are supported. **Appropriate loaders and dependencies (ex. stylus-loader & stylus) are required to use preprocessors.**
+ Now you can use @import & url() in your style tags! Pure CSS, Stylus, Sass, Less are supported. **You still need to install corresponding loaders and packages for pre-processors. (e.g. stylus-loader, stylus)**
 
 #### Stylus sample
 
 ```html
 <my-sample>
+
   <p>Hello!<p>
-  <style type="text/stylus">
+
+  <style type="stylus">
     @import "common.styl"
     my-sample
       p
         background url('./background.png')
   </style>
+  
 </my-sample>
 ```
 

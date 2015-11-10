@@ -1,7 +1,7 @@
 {
   "name": "riotjs-style-plus-loader",
-  "version": "0.1.0",
-  "description": "riotjs-loader extention which enables @import &amp; url() in your style tags.",
+  "version": "0.1.1",
+  "description": "riotjs-loader extention which enables @import & url() in your style tags.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

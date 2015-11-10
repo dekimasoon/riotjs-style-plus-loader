@@ -1,15 +1,17 @@
 var path = require('path')
 
-module.exports = function (source) {
-  if (this.cacheable) this.cacheable()
+module.exports = function (source, testOpts) {
   var STYLE = /<style(\s+[^>]*)?>\n?([^<]*(?:<(?!\/style\s*>)[^<]*)*)<\/style\s*>/gi // from riot/compiler
-  var PREPROCESSOR = /\stype="text\/([a-z]*)"/
-  var opts = {
+  var PREPROCESSOR = /\stype="([a-z/]*)"/
+  var opts = testOpts || {
     mode: this.query.substring(1),
     filename: path.basename(this.resourcePath)
   }
-  var unstyledTag, loader
+  var unstyledTag
+  var loader = ''
   var styles = []
+
+  if (this.cacheable) this.cacheable()
 
   unstyledTag = source.replace(STYLE, function (_, attrs, style) {
     // style mode
@@ -17,7 +19,9 @@ module.exports = function (source) {
       styles.push(style)
     }
     // normal mode
-    loader = attrs ? '!' + attrs.match(PREPROCESSOR)[1] : ''
+    if (attrs && PREPROCESSOR.test(attrs)) {
+      loader = '!' + attrs.match(PREPROCESSOR)[1].replace('text/', '')
+    }
     return ''
   })
 
