@@ -29,6 +29,12 @@ module.exports = function (source, testOpts) {
   if (opts.mode === 'style') {
     return styles.join('\n')
   }
+
+  // strip mode
+  if (opts.mode === 'strip') {
+    return unstyledTag
+  }
+
   // normal mode
   var requireStr = 'require("!!style!css' + loader + '!riotjs-style-plus-loader?style!./' + opts.filename + '")'
   return [requireStr, unstyledTag].join('\n')
